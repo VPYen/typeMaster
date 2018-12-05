@@ -25,3 +25,8 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## Note
+
+node_modules containing needed libraries can be restored using `npm install` in the respective folders. There are two node_module folders required for this application. One is for the express.js server and another one for the angular folder.
