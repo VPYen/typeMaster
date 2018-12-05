@@ -1,0 +1,141 @@
+.profile {
+  opacity: .9;
+  width: 85px;
+  height: 85px;
+}
+
+.modalContent {
+  color: white;
+  width: 400px;
+  padding: 30px;
+  margin-top: 8%;
+  margin-left: 40%;
+  padding-bottom: 60px;
+  border: 4px solid black;
+  background-color: #343a40;
+  box-shadow: 0px 0px 8px 4px black;
+  /*----- Fade In ------*/
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 1s; /* Firefox < 16 */
+      -ms-animation: fadein 1s; /* Internet Explorer */
+       -o-animation: fadein 1s; /* Opera < 12.1 */
+          animation: fadein 1s;
+}
+/*------FadeIn modalContent------*/
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+/*-----------------------------------*/
+.modalHeader {
+  display: flex;
+  flex-direction: row;
+}
+
+.modalHeader > h3 {
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+hr {
+  height: 1.5px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background: goldenrod;
+}
+
+.closeBtn {
+  float: right;
+  color: white;
+  font-weight: bolder;
+  margin-bottom: 30px;
+  font-family: cursive;
+  border: 3px solid black;
+  box-shadow: 6px 6px 0px 0px black;
+}
+
+.formLink {
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.formLink:hover {
+  color: gray !important;
+  font-weight: bolder;
+}
+
+.selectBox {
+  width: 400px;
+  margin-left: 20px;
+}
+
+.selectBox > h3 {
+  margin-right: 10px;
+}
+
+select {
+  margin-top: 20px;
+}
+
+.custom-select {
+  width: 250px;
+}
+
+option {
+  color: white;
+  background: black;
+}
+
+@media only screen and (max-width: 1400px) {
+  .modalContent {
+    width: 380px;
+    margin-top: 8%;
+    margin-left: 40%;
+  }
+  hr {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  .selectBox {
+    margin-left: 0px;
+  }
+  .selectBox > h3 {
+    font-size: 20px;
+  }
+  .formLink {
+    margin-left: 0px;
+  }
+  .profile {
+    width: 50px;
+    height: 50px;
+  }
+  .closeBtn {
+    width: 65px;
+    padding: 2px;
+    font-size: 15px;
+  }
+}

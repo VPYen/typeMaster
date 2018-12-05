@@ -1,0 +1,143 @@
+.profile {
+  opacity: .9;
+  width: 80px;
+  height: 80px;
+}
+
+.modalContent {
+  color: white;
+  width: 400px;
+  padding: 20px;
+  margin-top: 8%;
+  margin-left: 42%;
+  padding-bottom: 40px;
+  border: 4px solid black;
+  background-color: #343a40;
+  box-shadow: 0px 0px 8px 4px black;
+  /*----- Fade In ------*/
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 1s; /* Firefox < 16 */
+      -ms-animation: fadein 1s; /* Internet Explorer */
+       -o-animation: fadein 1s; /* Opera < 12.1 */
+          animation: fadein 1s;
+}
+
+/*------FadeIn modalContent------*/
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+/*-----------------------------------*/
+.modalHeader {
+  display: flex;
+  flex-direction: row;
+  text-shadow: 8px 8px 4px black;
+}
+
+.modalHeader > h3 {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+hr {
+  height: 1.5px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  background: goldenrod;
+}
+
+input {
+  width: 300px;
+  border: 2px solid black;
+  box-shadow: 6px 6px 0px 0px black;
+}
+
+input:focus {
+  border: 2px solid aqua;
+  box-shadow: 0px 0px 8px 8px black;
+}
+
+.form-group {
+  margin-left: 30px;
+  margin-bottom: 30px;
+  text-shadow: 8px 8px 4px black;
+}
+
+.btn {
+  float: right;
+  margin-right: 30px;
+  font-weight: bolder;
+  font-family: cursive;
+  border: 4px solid black;
+  box-shadow: 6px 6px 0px 0px black;
+}
+
+.formLink {
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.formLink:hover {
+  color: gray !important;
+  font-weight: bolder;
+}
+
+ul {
+list-style-type: none;
+}
+
+li {
+  margin-top: 5px;
+}
+
+.error {
+  color: red;
+}
+
+@media only screen and (max-width: 1400px) {
+  .modalContent {
+    width: 400px;
+    padding-bottom: 40px;
+  }
+  .form-group {
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+  hr {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  .formLink {
+    margin-left: 10px;
+  }
+  .btn {
+    width: 70px;
+    padding: 2px;
+    font-size: 15px;
+    margin-top: 15px;
+  }
+}

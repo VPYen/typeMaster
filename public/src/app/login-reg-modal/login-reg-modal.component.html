@@ -1,0 +1,62 @@
+<!-- Login -->
+<form *ngIf="login" (submit)="submitLogin()">
+<div class="container modalContent">
+  <div class="modalHeader">
+    <h3>Login</h3>
+  </div>
+  <div class="modalBody">
+    <hr/>
+      <div class="form-group">
+        <p class="error" *ngIf="errors.error">{{errors.error}}</p>
+        <label for="user">Username</label>
+        <input type="text" name="formLogin.username" [(ngModel)]="formLogin.username" class="form-control" id="user" placeholder="Username">
+      </div>
+      <div class="form-group">
+        <label for="pass">Password</label>
+        <input type="password" name="formLogin.password" [(ngModel)]="formLogin.password" class="form-control" id="pass" placeholder="Password">
+      </div>
+      <p>*Username is case sensitive</p>
+    <hr/>
+  </div>
+  <div class="modalFooter">
+    <button class="btn btn-secondary">Login</button>
+    <ul>
+      <li><a type="button" (click)="registerToggle()" class="formLink"><u>New to Type Master?</u></a></li>
+      <li><a type="button" (click)="closeModal()" class="formLink"><u>Continue as guest...</u></a></li>
+    </ul>
+  </div>
+</div>
+</form>
+<!-- Registration -->
+<form *ngIf="register" (submit)="submitReg()">
+<div class="container modalContent">
+  <div class="modalHeader">
+    <h3>Registration</h3>
+  </div>
+  <div class="modalBody">
+    <hr/>
+      <div class="form-group">
+        <label for="user">Username</label>
+        <input type="text" name="formReg.username" [(ngModel)]="formReg.username" class="form-control" id="user" placeholder="Username">
+        <p *ngIf="errors.error" class="error">{{errors.error.errors.username.message}}</p>
+        <p *ngIf="errors.errorUser" class="error">{{errors.errorUser}}</p>
+      </div>
+      <div class="form-group">
+        <label for="pass">Password</label>
+        <input type="password" name="formReg.password" [(ngModel)]="formReg.password" class="form-control" id="pass" placeholder="Password">
+        <p *ngIf="errors.errorPass" class="error">{{errors.errorPass}}</p>
+      </div>
+      <div class="form-group">
+        <label for="pass">Password Confirmation</label>
+        <input type="password" name="formReg.passwordConfirm" [(ngModel)]="formReg.passwordConfirm" class="form-control" id="pass" placeholder="Password">
+        <p *ngIf="errors.errorConfirm" class="error">{{errors.errorConfirm}}</p>
+      </div>
+      <p>*Username will be case sensitive</p>
+    <hr/>
+  </div>
+  <div class="modalFooter">
+    <a type="button" (click)="loginToggle()" class="formLink"><u>Sign In</u></a>
+    <button class="btn btn-secondary">Register</button>
+  </div>
+</div>
+</form>

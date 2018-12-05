@@ -1,0 +1,39 @@
+<div class="container modalContent">
+  <div class="modalHeader">
+    <img class="profile" src="/assets/images/{{user.avatar}}"/>
+    <h3>{{user.username}}</h3>
+  </div>
+  <div class="modalBody" *ngIf="!selectImg">
+    <hr/>
+    <p *ngIf="user.accuracy"><b>Average Accuracy:</b> {{user.accuracy | percent: '1.2'}}</p>
+    <p *ngIf="user.wpm"><b>Average Words Per Minute (WPM):</b> {{user.wpm}}</p>
+    <p *ngIf="!user.accuracy"><b>Average Accuracy:</b> N/A</p>
+    <p *ngIf="!user.wpm"><b>Average Words Per Minute (WPM):</b> N/A</p>
+    <p *ngIf="user.username == 'Guest'">*Statistics are not tracked for Guest users</p>
+    <hr/>
+  </div>
+  <div class="modalBody selectImg" *ngIf="selectImg">
+    <hr/>
+    <div class="col selectBox">
+      <h3>Select an image</h3>
+      <select class="custom-select" name="user.avatar" [(ngModel)]="user.avatar">
+        <option value="blankProfileWhite.png">Default</option>
+        <option value="chibiNinja.jpg">Chibi Ninja</option>
+        <option value="chibiNinja2.jpg">Chibi Ninja 2</option>
+        <option value="ninjaTyper2.png">Ninja Typer</option>
+        <option value="typingNinja2.png">Ninja Typer 2</option>
+        <option value="kungfuGirl.png">KungFu Girl</option>
+        <option value="coolNinja2.png">Cool Ninja</option>
+        <option value="ninjaGirl.jpg">Ninja Girl</option>
+        <option value="sexyGirl.jpg">Sexy Ninja</option>
+        <option value="typingNinja3.png">Macho Ninja</option>
+      </select>
+    </div>
+    <hr/>
+  </div>
+  <div class="modalFooter">
+    <a type="button" *ngIf="selectImg" (click)="pickImg()" class="formLink">Return to profile</a>
+    <a type="button" *ngIf="!selectImg" class="formLink" (click)="pickImg()">Select a profile image</a>
+    <button (click)="closeModal()" class="closeBtn btn btn-danger">Close</button>
+  </div>
+</div>
