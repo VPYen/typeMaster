@@ -3,14 +3,14 @@
   <a type="button" class="navbar-brand" (click)="toggleProfile()">
     <img class="profile" src="/assets/images/blankProfileWhite.png"/><p>Guest</p>
   </a>
-  <a type="button">Login</a>
+  <a type="button" (click)="toggleLogin()">Login</a>
   <h1 class="col-3">Type Master</h1>
   <audio *ngIf="gameStart" id="gameAudio" controls src="/assets/audio/doomOSTe1m1.mp3" autoplay loop>
      Error: your web browser does not support this audio player.
   </audio>
 </nav>
-<app-profile-modal *ngIf="profModal" (close)="closeFromProfile($event)"></app-profile-modal>
-<app-login-reg-modal *ngIf="loginModal" (close)="closeFromLogin($event)"></app-login-reg-modal>
+<app-profile-modal *ngIf="profModal" [user]="currentUser" (close)="closeFromProfile($event)"></app-profile-modal>
+<app-login-reg-modal *ngIf="loginModal" [user]="currentUser" (close)="closeFromLogin($event)"></app-login-reg-modal>
 <app-game></app-game>
 <div id="ninjaMain" *ngIf="!gameStart"></div>
 <div id="ninjaTyping" *ngIf="gameStart"></div>
