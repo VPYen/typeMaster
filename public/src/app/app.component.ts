@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   profModal = false;
   loginModal = true;
   gameStart = false;
+  currentUser = {username: "Guest", avatar: "blankProfileWhite.png"};
 
   constructor(private _httpService: HttpService,
               private _route: ActivatedRoute, private _router: Router) { }
@@ -29,9 +30,18 @@ export class AppComponent implements OnInit {
     }
   }
 
+  toggleLogin() {
+    if(this.loginModal == false) {
+      this.profModal = false;
+      this.loginModal = true;
+    }else {
+      this.loginModal = false;
+    }
+  }
+
   closeFromProfile(eventData) {
     console.log(eventData);
-    this.profModal = eventData;
+    this.currentUser = eventData;
   }
 
   closeFromLogin(eventData) {
