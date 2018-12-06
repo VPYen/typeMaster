@@ -1,16 +1,18 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <nav class="row navbar fixed-top bg-dark">
   <a type="button" class="navbar-brand" (click)="toggleProfile()">
-    <img class="profile" src="/assets/images/blankProfileWhite.png"/><p>Guest</p>
+    <img class="profile" src="/assets/images/{{currentUser.avatar}}" align="bottom"/>
+    <p>{{currentUser.username}}</p>
   </a>
-  <a type="button" (click)="toggleLogin()">Login</a>
   <h1 class="col-3">Type Master</h1>
-  <audio *ngIf="gameStart" id="gameAudio" controls src="/assets/audio/doomOSTe1m1.mp3" autoplay loop>
+  <audio id="gameAudio" *ngIf="gameStart" class="col-1 ml-auto" controls src="/assets/audio/doomOSTe1m1.mp3" autoplay loop>
      Error: your web browser does not support this audio player.
   </audio>
+  <a id="loginLink" type="button" *ngIf="currentUser.username == 'Guest'" (click)="toggleLogin()" class="col-1">Login</a>
+  <a id="loginLink" type="button" *ngIf="currentUser.username != 'Guest'" (click)="toggleLogout()" class="col-1">Logout</a>
 </nav>
+<app-game *ngIf="!profModal && !loginModal" [user]="currentUser" (beginGame)="toggleGame($event)"></app-game>
 <app-profile-modal *ngIf="profModal" [user]="currentUser" (close)="closeFromProfile($event)"></app-profile-modal>
-<app-login-reg-modal *ngIf="loginModal" [user]="currentUser" (close)="closeFromLogin($event)"></app-login-reg-modal>
-<app-game></app-game>
+<app-login-reg-modal *ngIf="loginModal" (user)="setUserFromLogin($event)" (close)="closeFromLogin($event)"></app-login-reg-modal>
 <div id="ninjaMain" *ngIf="!gameStart"></div>
 <div id="ninjaTyping" *ngIf="gameStart"></div>
