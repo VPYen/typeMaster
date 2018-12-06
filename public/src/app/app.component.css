@@ -8,14 +8,20 @@
   width: 40vw;
   height: 65vh;
   position: absolute;
-  top: 55%;
-  left: 32%;
+  top: 46%;
+  left: 30%;
   z-index: -3;
   margin-bottom: 100;
+  /*------ Rotate Image ------*/
+  -ms-transform:      rotate(1.5deg);
+  -moz-transform:     rotate(1.5deg);
+  -webkit-transform:  rotate(1.5deg);
+  -o-transform:       rotate(1.5deg);
+  transform:          rotate(1.5deg);
   /* parallax effect */
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 70% 70%;
 }
 
 #ninjaTyping{
@@ -25,7 +31,7 @@
   height: 50vh;
   position: absolute;
   top: 50%;
-  left: -4%;
+  left: -2%;
   z-index: -2;
   margin-bottom: 100;
   /* parallax effect */
@@ -36,9 +42,12 @@
 
 
 .navbar {
+  background: url("/assets/images/charCode.gif");
+  background-blend-mode: luminosity;
+  opacity: .96;
+  height: 98px;
+  text-align: center;
   box-shadow: 0px 0px 8px 8px black;
-  background-image: url("/assets/images/charCode.gif");
-
 }
 
 .brand-logo {
@@ -49,7 +58,7 @@
 #loginLink {
   top: 50%;
   right: 18%;
-  font-size: 25px;
+  font-size: 21px;
   cursor: pointer;
   color: goldenrod;
   position: absolute;
@@ -64,7 +73,7 @@
 }
 
 .profile {
-  opacity: .7;
+  opacity: .85;
   width: 50px;
   height: 50px;
 }
@@ -81,23 +90,23 @@
 }
 
 nav > h1 {
+  left: 40%;
   color: white;
   cursor: default;
   font-size: 65px;
   position: absolute;
-  left: 41%;
-  text-shadow: 5px 12px 5px black;
+  text-shadow: 3px 3px 4px goldenrod;
 }
 
 @media only screen and (max-width: 1400px) {
   #ninjaMain {
-    top: 55%;
-    left: 33%;
+    top: 52%;
+    left: 32%;
     width: 38vw;
     height: 65vh;
   }
   .navbar > h1 {
+    left: 41%;
     font-size: 58px;
   }
-
 }
